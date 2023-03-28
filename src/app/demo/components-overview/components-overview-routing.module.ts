@@ -77,6 +77,7 @@ import { FileInputAuthenticExampleComponent } from './file-example/file-input-au
 import { ChipAuthenticExampleComponent } from './chip-authentic-example/chip-authentic-example.component';
 import { SliderAuthenticExampleComponent } from './slider-authentic-example/slider-authentic-example.component';
 import { IconOverviewComponent } from './icon-example/icon-overview/icon-overview.component';
+import { CodeeditorExampleComponent } from './codeeditor-example/codeeditor-example.component';
 import { CheckboxContainerAcExampleComponent } from './checkbox-container-ac-example/checkbox-container-ac-example.component';
 import { TextboxExampleComponent } from './textbox-example/textbox-example.component';
 
@@ -94,6 +95,7 @@ const routes: Routes = [
       { path: 'card', component: CardExampleComponent },
       { path: 'chips', component: ChipExampleComponent },
       { path: 'chips-ac', component: ChipAuthenticExampleComponent },
+      { path: 'code-editor', component: CodeeditorExampleComponent },
       { path: 'datepicker', component: DatepickerExampleComponent },
       { path: 'datepicker-ac', component: DatepickerAuthenticExampleComponent },
       { path: 'datetimepicker', component: DateTimepickerExampleComponent },

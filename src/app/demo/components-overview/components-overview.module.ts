@@ -118,6 +118,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { IconOverviewComponent } from './icon-example/icon-overview/icon-overview.component';
 import { ComponentsOverviewBlueComponent } from './components-overview-blue.component';
 import { ComponentsOverviewAuthenticComponent } from './components-overview-authentic.component';
+import { CodeeditorExampleComponent } from './codeeditor-example/codeeditor-example.component';
+import { LuxCodeeditorModule } from '../../modules/lux-codeeditor/lux-codeeditor.module';
+
 import { CheckboxContainerAcExampleComponent } from './checkbox-container-ac-example/checkbox-container-ac-example.component';
 import { TextboxExampleComponent } from './textbox-example/textbox-example.component';
 
@@ -150,7 +153,8 @@ import { TextboxExampleComponent } from './textbox-example/textbox-example.compo
     LuxFilterModule,
     MatListModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    LuxCodeeditorModule
   ],
   declarations: [
     MasterDetailExampleComponent,
@@ -245,6 +249,7 @@ import { TextboxExampleComponent } from './textbox-example/textbox-example.compo
     ComponentsOverviewAuthenticComponent,
     MasterDetailAuthenticExampleComponent,
     CustomTabComponent,
+    CodeeditorExampleComponent,
     CheckboxContainerAcExampleComponent,
     TextboxExampleComponent
   ],

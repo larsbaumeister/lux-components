@@ -99,5 +99,8 @@
     "marked": "4.0.15",
     "ng2-pdf-viewer": "8.0.1",
     "pdfjs-dist": "2.13.216"
+  },
+  "dependencies": {
+    "monaco-editor": "^0.36.1"
   }
 }

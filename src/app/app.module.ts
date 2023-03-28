@@ -29,6 +29,7 @@ import 'hammerjs';
 import { PlaceholderComponent } from './demo/abstract/placeholder/placeholder.component';
 import { RedirectComponent } from './demo/abstract/redirect/redirect.component';
 import { LicenseHintComponent } from './demo/base/license-hint/license-hint.component';
+import { LuxCodeeditorModule } from './modules/lux-codeeditor/lux-codeeditor.module';
 
 const myConfiguration: LuxComponentsConfigParameters = {
   generateLuxTagIds: environment.generateLuxTagIds,
@@ -60,7 +61,8 @@ const myConfiguration: LuxComponentsConfigParameters = {
     BaselineModule,
     ExampleBaseModule,
     LuxComponentsConfigModule.forRoot(myConfiguration),
-    LuxMarkdownModule
+    LuxMarkdownModule,
+    LuxCodeeditorModule
   ],
   providers: [{ provide: LuxLookupService, useClass: MockLuxLookupService }],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

@@ -45,6 +45,14 @@ export class ComponentsOverviewNavigationService implements OnDestroy {
         themes: this.themeArrAC
       },
       {
+        onclick: () => this.goTo('code-editor'),
+        icon: 'fas fa-ship',
+        label: 'Code-Editor',
+        moduleName: 'code-editor',
+        news: true,
+        themes: this.themeArrAC
+      },
+      {
         onclick: () => this.goTo('datepicker'),
         icon: 'lux-interface-file-text',
         label: 'Datepicker',

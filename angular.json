@@ -79,6 +79,11 @@
                 "glob": "*(*min.css|*min.css.map)",
                 "input": "./node_modules/@ihk-gfi/lux-components-theme/prebuilt-themes",
                 "output": "./assets/themes"
+              },
+              {
+                "glob": "**/*",
+                "input": "./node_modules/monaco-editor",
+                "output": "./assets/monaco-editor"
               }
             ],
             "styles": ["src/styles.scss"],
@@ -217,5 +222,8 @@
     "@schematics/angular:directive": {
       "prefix": "lux"
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

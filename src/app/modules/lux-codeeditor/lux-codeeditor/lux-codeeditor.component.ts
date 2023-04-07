@@ -19,7 +19,7 @@ export class LuxCodeeditorComponent implements OnInit {
   @ViewChild('editorContainer', { static: true }) _editorContainer!: ElementRef;
 
   private initMonaco(): void {
-    if(!this.monacoEditorService.loaded) {
+    if (!this.monacoEditorService.loaded) {
       this.monacoEditorService.loadingFinished.pipe(first()).subscribe(() => {
         this.initMonaco();
       });
@@ -28,7 +28,15 @@ export class LuxCodeeditorComponent implements OnInit {
 
     this._editor = monaco.editor.create(
       this._editorContainer.nativeElement,
-      {}
+      {
+        value: `
+function hello (str) {
+  console.log('hello ' + str);
+}
+        `,
+        language: "javascript",
+        fontSize: "12px",
+      }
     );
   }
 

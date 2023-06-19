@@ -12,7 +12,7 @@
         [luxHintShowOnlyOnFocus]="hintShowOnlyOnFocus"
         [luxOptionLabelProp]="renderProperty"
         [luxErrorMessageNotAnOption]="errorMessageNotAnOption"
-        [luxOptions]="toggleOptions ? options : options2"
+        [luxOptions]="getOptions()"
         [luxOptionBlockSize]="optionBlockSize"
         [luxPickValue]="usePickValueFn && strict ? pickValueFn : undefined"
         [luxFilterFn]="useFilterFn ? onFilter : undefined"
@@ -54,7 +54,7 @@
         [luxHintShowOnlyOnFocus]="hintShowOnlyOnFocus"
         [luxOptionLabelProp]="renderProperty"
         [luxErrorMessageNotAnOption]="errorMessageNotAnOption"
-        [luxOptions]="toggleOptions ? options : options2"
+        [luxOptions]="getOptions()"
         [luxOptionBlockSize]="optionBlockSize"
         [luxPickValue]="usePickValueFn && strict ? pickValueFn : undefined"
         [luxFilterFn]="useFilterFn ? onFilter : undefined"
@@ -150,9 +150,18 @@
       [luxOptions]="renderProperties"
       luxOptionLabelProp="label"
       luxLabel="luxOptionLabelProp"
+      [luxDisabled]="useStringValues"
       luxHint="Über die Property wird eingestellt, woraus der anzuzeigende Label bezogen wird."
     >
     </lux-select>
+    <lux-toggle
+      class="lux-highlight-section"
+      [(luxChecked)]="useStringValues"
+      luxLabel="String-Werte verwenden"
+      luxHint="Anstatt Objekte, String-Werte verwenden"
+      [luxNoTopLabel]="true"
+    >
+    </lux-toggle>
     <lux-toggle
       class="lux-highlight-section"
       [(luxChecked)]="disabled"
@@ -202,12 +211,13 @@
       class="lux-highlight-section"
       [(luxChecked)]="usePickValueFn"
       luxLabel="luxPickValue"
-      [luxDisabled]="!strict"
+      [luxDisabled]="!strict || useStringValues"
       [luxNoTopLabel]="true"
     >
       <lux-form-hint>
         Dieses Flag aktiviert die PickValue-Funktion. Erfordert luxStrict = true. <br />
-        Das bedeutet, es wird der von der PickValue-Funktion zurückgelieferte Wert selektiert und nicht die Option als ganzes.
+        Das bedeutet, es wird der von der PickValue-Funktion zurückgelieferte Wert selektiert und nicht die Option als ganzes. <br />
+        Wenn String-Werte verwendet werden, kann diese Funktion nicht verwendet werden.
       </lux-form-hint>
     </lux-toggle>
     <lux-toggle class="lux-highlight-section" [(luxChecked)]="useFilterFn" luxLabel="luxFilterFn" [luxNoTopLabel]="true">

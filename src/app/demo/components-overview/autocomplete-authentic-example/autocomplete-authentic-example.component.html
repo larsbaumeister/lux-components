@@ -12,7 +12,7 @@
         [luxHintShowOnlyOnFocus]="hintShowOnlyOnFocus"
         [luxOptionLabelProp]="renderProperty"
         [luxErrorMessageNotAnOption]="errorMessageNotAnOption"
-        [luxOptions]="toggleOptions ? options : options2"
+        [luxOptions]="getOptions()"
         [luxOptionBlockSize]="optionBlockSize"
         [luxPickValue]="usePickValueFn && strict ? pickValueFn : undefined"
         [luxFilterFn]="useFilterFn ? onFilter : undefined"
@@ -22,6 +22,7 @@
         [luxRequired]="required"
         [luxReadonly]="readonly"
         [luxStrict]="strict"
+        [luxDense]="denseFormat"
         [luxLookupDelay]="delay"
         [luxErrorMessage]="useErrorMessage ? errorMessage : undefined"
         [luxErrorCallback]="useErrorMessage ? emptyCallback : errorCallback"
@@ -54,7 +55,7 @@
         [luxHintShowOnlyOnFocus]="hintShowOnlyOnFocus"
         [luxOptionLabelProp]="renderProperty"
         [luxErrorMessageNotAnOption]="errorMessageNotAnOption"
-        [luxOptions]="toggleOptions ? options : options2"
+        [luxOptions]="getOptions()"
         [luxOptionBlockSize]="optionBlockSize"
         [luxPickValue]="usePickValueFn && strict ? pickValueFn : undefined"
         [luxFilterFn]="useFilterFn ? onFilter : undefined"
@@ -62,6 +63,7 @@
         [(luxDisabled)]="disabled"
         [luxReadonly]="readonly"
         [luxStrict]="strict"
+        [luxDense]="denseFormat"
         [luxLookupDelay]="delay"
         [luxErrorMessage]="useErrorMessage ? errorMessage : undefined"
         [luxErrorCallback]="useErrorMessage ? emptyCallback : errorCallback"
@@ -149,10 +151,19 @@
       (luxSelectedChange)="onRenderProperty($event)"
       [luxOptions]="renderProperties"
       luxOptionLabelProp="label"
+      [luxDisabled]="useStringValues"
       luxLabel="luxOptionLabelProp"
       luxHint="Über die Property wird eingestellt, woraus der anzuzeigende Label bezogen wird."
     >
     </lux-select>
+    <lux-toggle
+      class="lux-highlight-section"
+      [(luxChecked)]="useStringValues"
+      luxLabel="String-Werte verwenden"
+      luxHint="Anstatt Objekte, String-Werte verwenden"
+      [luxNoTopLabel]="true"
+    >
+    </lux-toggle>
     <lux-toggle
       class="lux-highlight-section"
       [(luxChecked)]="disabled"
@@ -192,6 +203,14 @@
         <b>In diesem Beispiel wird stattdessen für die Reactive-Form Component der Validator.required für das Form-Control gesetzt.</b>
       </lux-form-hint>
     </lux-toggle>
+    <lux-toggle
+      class="lux-highlight-section"
+      [(luxChecked)]="denseFormat"
+      luxLabel="luxDense"
+      luxHint="Diese Property veringert das Padding innerhalb des Controls."
+      [luxNoTopLabel]="true"
+    >
+    </lux-toggle>
     <lux-toggle class="lux-highlight-section" [(luxChecked)]="strict" luxLabel="luxStrict" [luxNoTopLabel]="true">
       <lux-form-hint>
         Dieses Flag aktiviert den strikten Modus dieser Component´.<br />
@@ -202,12 +221,13 @@
       class="lux-highlight-section"
       [(luxChecked)]="usePickValueFn"
       luxLabel="luxPickValue"
-      [luxDisabled]="!strict"
+      [luxDisabled]="!strict || useStringValues"
       [luxNoTopLabel]="true"
     >
       <lux-form-hint>
         Dieses Flag aktiviert die PickValue-Funktion. Erfordert luxStrict = true. <br />
-        Das bedeutet, es wird der von der PickValue-Funktion zurückgelieferte Wert selektiert und nicht die Option als ganzes.
+        Das bedeutet, es wird der von der PickValue-Funktion zurückgelieferte Wert selektiert und nicht die Option als ganzes. <br />
+        Wenn String-Werte verwendet werden, kann diese Funktion nicht verwendet werden.
       </lux-form-hint>
     </lux-toggle>
     <lux-toggle class="lux-highlight-section" [(luxChecked)]="useFilterFn" luxLabel="luxFilterFn" [luxNoTopLabel]="true">

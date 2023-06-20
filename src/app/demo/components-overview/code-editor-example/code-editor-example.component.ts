@@ -6,9 +6,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CodeEditorExampleComponent implements OnInit {
 
+  public content = '';
+
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
 }

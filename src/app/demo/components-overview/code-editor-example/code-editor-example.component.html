@@ -1,9 +1,11 @@
-<example-base-structure>
+<example-base-structure
+    exampleTitle="Markdown"
+    exampleDocumentationHref="https://github.com/IHK-GfI/lux-components/wiki/lux%E2%80%90markdown">
     <example-base-content>
-        <lux-code-editor></lux-code-editor>
+        <lux-code-editor [(content)]="content"></lux-code-editor>
     </example-base-content>
     <example-base-simple-options>
-
+        <lux-textarea-ac [(luxValue)]="content"></lux-textarea-ac>
     </example-base-simple-options>
     <example-base-advanced-options>
 

@@ -99,5 +99,12 @@
     "marked": "4.0.15",
     "ng2-pdf-viewer": "8.0.1",
     "pdfjs-dist": "2.13.216"
+  },
+  "dependencies": {
+    "@codemirror/highlight": "^0.19.8",
+    "@codemirror/lang-javascript": "^6.1.9",
+    "@codemirror/lang-xml": "^6.0.2",
+    "@codemirror/view": "^6.13.2",
+    "codemirror": "^6.0.1"
   }
 }

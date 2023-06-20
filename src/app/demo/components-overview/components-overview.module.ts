@@ -120,6 +120,8 @@ import { ComponentsOverviewBlueComponent } from './components-overview-blue.comp
 import { ComponentsOverviewAuthenticComponent } from './components-overview-authentic.component';
 import { CheckboxContainerAcExampleComponent } from './checkbox-container-ac-example/checkbox-container-ac-example.component';
 import { TextboxExampleComponent } from './textbox-example/textbox-example.component';
+import { CodeEditorExampleComponent } from './code-editor-example/code-editor-example.component';
+import { LuxCodeEditorModule } from '../../modules/lux-code-editor/lux-code-editor.module';
 
 @NgModule({
   imports: [
@@ -150,7 +152,8 @@ import { TextboxExampleComponent } from './textbox-example/textbox-example.compo
     LuxFilterModule,
     MatListModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    LuxCodeEditorModule
   ],
   declarations: [
     MasterDetailExampleComponent,
@@ -246,7 +249,8 @@ import { TextboxExampleComponent } from './textbox-example/textbox-example.compo
     MasterDetailAuthenticExampleComponent,
     CustomTabComponent,
     CheckboxContainerAcExampleComponent,
-    TextboxExampleComponent
+    TextboxExampleComponent,
+    CodeEditorExampleComponent
   ],
   providers: [HttpClient],
   entryComponents: [DialogComponentExampleComponent]

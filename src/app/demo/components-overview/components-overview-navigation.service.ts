@@ -302,6 +302,13 @@ export class ComponentsOverviewNavigationService implements OnDestroy {
         label: 'Textbox',
         moduleName: 'common',
         news: true
+      },
+      {
+        onclick: () => this.goTo('code-editor'),
+        icon: 'lux-interface-content-note-pad-text',
+        label: 'Code-Editor',
+        moduleName: 'lux-code-editor',
+        news: true
       }
     ];
 

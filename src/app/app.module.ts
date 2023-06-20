@@ -20,6 +20,7 @@ import { LuxComponentsConfigParameters } from './modules/lux-components-config/l
 import { environment } from '../environments/environment';
 import { ConfigurationModule } from './demo/configuration/configuration.module';
 import { LuxFormModule } from './modules/lux-form/lux-form.module';
+import { LuxCodeEditorModule } from './modules/lux-code-editor/lux-code-editor.module';
 import { BaselineModule } from './demo/baseline/baseline.module';
 import { LuxPipesModule } from './modules/lux-pipes/lux-pipes.module';
 import { ExampleBaseModule } from './demo/example-base/example-base.module';
@@ -29,6 +30,7 @@ import 'hammerjs';
 import { PlaceholderComponent } from './demo/abstract/placeholder/placeholder.component';
 import { RedirectComponent } from './demo/abstract/redirect/redirect.component';
 import { LicenseHintComponent } from './demo/base/license-hint/license-hint.component';
+
 
 const myConfiguration: LuxComponentsConfigParameters = {
   generateLuxTagIds: environment.generateLuxTagIds,
@@ -60,7 +62,8 @@ const myConfiguration: LuxComponentsConfigParameters = {
     BaselineModule,
     ExampleBaseModule,
     LuxComponentsConfigModule.forRoot(myConfiguration),
-    LuxMarkdownModule
+    LuxMarkdownModule,
+    LuxCodeEditorModule
   ],
   providers: [{ provide: LuxLookupService, useClass: MockLuxLookupService }],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
